@@ -1,0 +1,11 @@
+generated: '2026-09-16'
+method: searched
+source: https://safetydatasheetapi.com/llms.txt, https://safetydatasheetapi.com/llms-full.txt
+limit_count: 0
+note: >-
+  No published rate limits, quota headers, or exhaustion status codes were found. The provider's
+  llms.txt and llms-full.txt describe metered per-document billing and self-serve / Growth / Enterprise
+  tiers but state no request-rate ceilings. The HTML API docs (/api-docs/) and the OpenAPI contract
+  (/openapi.yaml), which might document limits or RateLimit-* response headers, are behind a Cloudflare
+  bot challenge (HTTP 403) and could not be read this run. Honest zero, not a confirmed absence of limits.
+limits: []

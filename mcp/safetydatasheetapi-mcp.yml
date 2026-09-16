@@ -1,0 +1,32 @@
+generated: '2026-09-16'
+method: derived
+status: candidate
+source: >-
+  Derived candidate tool list from the provider's documented REST operations (apis.yml / README and
+  llms.txt / llms-full.txt). No hosted or local MCP server is published or advertised by the provider.
+deployment:
+  mode: none
+  auth: api-key
+  verified: derived
+  note: >-
+    No MCP server exists. mode:none records that this is a derived candidate; nobody ships a server.
+    Input schemas cannot be bound because the OpenAPI contract (/openapi.yaml) is behind a Cloudflare
+    bot challenge (HTTP 403) this run — the tools below carry documented operation names only.
+tools:
+- name: extract_sds
+  rest: POST /extract-sds
+  description: >-
+    Extract a single SDS/MSDS PDF into a normalized 16-section structured record (JSON/XML/CSV) with
+    confidence scores and warnings.
+  confidence: medium
+  inputSchema: unknown (needs authenticated read of the bot-walled OpenAPI)
+- name: extract_sds_bulk
+  rest: POST /extract-sds/bulk
+  description: Submit an asynchronous bulk extraction job with webhook callback.
+  confidence: medium
+  inputSchema: unknown (needs authenticated read of the bot-walled OpenAPI)
+- name: get_extract_sds_bulk_job
+  rest: GET /extract-sds/bulk/{jobId}
+  description: Poll the status and result of an asynchronous bulk extraction job.
+  confidence: medium
+  inputSchema: unknown (needs authenticated read of the bot-walled OpenAPI)

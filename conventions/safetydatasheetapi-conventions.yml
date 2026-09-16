@@ -1,0 +1,53 @@
+generated: '2026-09-16'
+method: derived
+source: >-
+  Derived from the provider record (apis.yml / README) and the provider-published llms.txt and
+  llms-full.txt. The OpenAPI contract (/openapi.yaml) and HTML docs (/api-docs/), which would confirm
+  header-level semantics, are behind a Cloudflare bot challenge (HTTP 403) and could not be read this run.
+authentication:
+  style: bearer
+  location: Authorization header
+  note: Bearer token authentication (per the provider record and docs summary). OAuth2/scopes not documented.
+formats:
+  request: multipart/PDF upload
+  response:
+  - application/json
+  - application/xml
+  - text/csv
+  note: >-
+    Structured 16-section SDS records returned as JSON, XML, or CSV with confidence scores, warnings,
+    and request identifiers.
+request_hints:
+- name: language_hint
+  purpose: multilingual SDS handling (EU/US/APAC supplier variations)
+- name: schema_version
+  purpose: schema-version-aware / governed output payloads
+async:
+  style: bulk jobs + webhook callbacks
+  operations:
+  - POST /extract-sds/bulk (submit async bulk job)
+  - GET /extract-sds/bulk/{jobId} (poll job status/result)
+  webhooks: true
+  note: Async bulk extraction with webhook callbacks and job polling (per the provider record).
+request_id:
+  present: true
+  note: Provider states request identifiers are returned so uncertain fields can be routed to review.
+idempotency:
+  coverage: none
+  note: >-
+    No idempotency key, replay-protection header, or scoped idempotency mechanism is documented in
+    the machine-readable resources available this run. Not verified against the bot-walled OpenAPI.
+reversibility:
+  status: na
+  note: >-
+    This is a document-extraction (compute) API: a call converts an SDS PDF into structured data and
+    produces no durable, mutable server-side resource that a later operation cancels, refunds, voids,
+    or restores. No reversal operation is documented and none is expected for this surface.
+pagination:
+  style: unknown
+  note: Not documented in the available machine-readable resources.
+versioning:
+  scheme: path (/v1) + schema_version request hint
+  note: >-
+    Base path carries /v1; a schema-versioning policy page (/schema-versioning/) is advertised but is
+    behind the Cloudflare bot challenge this run.

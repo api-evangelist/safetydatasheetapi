@@ -1,0 +1,46 @@
+generated: '2026-09-16'
+method: probed
+source: live probes of the registrable domain and the advertised API host
+note: >-
+  Every /.well-known/* path on safetydatasheetapi.com returns HTTP 200 with an identical 43,140-byte
+  text/html homepage shell (a WordPress soft-404 catch-all), not a real document, so NO WellKnown or
+  SecurityTxt pointer is emitted. The advertised API host api.safetydatasheetapi.com is NXDOMAIN and
+  could not be probed. This is a recorded absence, which is valid data.
+hosts:
+- host: safetydatasheetapi.com
+  documents:
+  - path: /.well-known/apis.json
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell, not an apis.json document)
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell)
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell)
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell)
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    result: soft-404 (homepage HTML shell)
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    result: soft-404 (homepage HTML shell)
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell, not an AgentCard)
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    result: soft-404 (43140-byte homepage HTML shell)
+- host: api.safetydatasheetapi.com
+  documents: []
+  note: NXDOMAIN — host does not resolve.

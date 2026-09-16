@@ -1,0 +1,40 @@
+generated: '2026-09-16'
+method: searched
+source: https://safetydatasheetapi.com/#pricing (pricing anchors published verbatim in the
+  provider's own llms.txt and llms-full.txt; the HTML pricing page itself is behind a Cloudflare
+  bot challenge this run)
+currency: USD
+plan_count: 4
+note: >-
+  Pricing values are taken from the provider-published llms.txt / llms-full.txt "Pricing anchors"
+  block. The self-serve rate is published as a range and the Enterprise tier is "priced to value"
+  (no list price). Not read from a machine-readable pricing endpoint.
+plans:
+- name: Free sample
+  price: 0
+  currency: USD
+  billing_period: one-time
+  included_quota: 25-50 documents
+  card_required: false
+  note: Free evaluation sample, no card required.
+- name: Self-serve (pay-as-you-go)
+  price_model: usage
+  unit: per document
+  price_low: 0.10
+  price_high: 0.25
+  currency: USD
+  billing_period: metered
+  setup_fee: 0
+  note: Roughly USD 0.10-0.25 per document, metered, no setup fee. Published as a range.
+- name: Growth
+  price_model: committed-volume
+  setup_fee: 15000
+  currency: USD
+  billing_period: monthly
+  note: USD 15,000 setup plus committed monthly volume.
+- name: Enterprise
+  price_model: contact-sales
+  currency: USD
+  note: >-
+    Priced to value; includes setup, SLA, data residency, and custom validation. Enterprise deals
+    close directly (no published list price).

@@ -1,14 +1,37 @@
 name: Safety Data Sheet (SDS/MSDS) Extraction API
-description: >-
-  A REST API by SafetyDataSheetAPI (a product of DscvryAI) that converts Safety Data Sheet PDFs into normalized
-  16-section structured records (product identity, GHS/H&P statements, composition, exposure controls/PPE, tox/eco data,
-  disposal, transport, regulatory, revision metadata) output as JSON, XML, and CSV with confidence scores and warnings.
-  Supports OCR for scanned PDFs, multilingual input, custom schema mapping, and bulk/webhook async flows.
+description: A REST API by SafetyDataSheetAPI (a product of DscvryAI) that converts Safety Data Sheet
+  PDFs into normalized 16-section structured records (product identity, GHS/H&P statements, composition,
+  exposure controls/PPE, tox/eco data, disposal, transport, regulatory, revision metadata) output as JSON,
+  XML, and CSV with confidence scores and warnings. Supports OCR for scanned PDFs, multilingual input,
+  custom schema mapping, and bulk/webhook async flows.
 url: https://raw.githubusercontent.com/api-evangelist/safety-data-sheet-sds-msds-extraction-api/refs/heads/main/apis.yml
 created: '2026-09-16'
 modified: '2026-09-16'
 specificationVersion: '0.21'
 tags:
+- sds
+- msds
+- safety-data-sheets
+- ghs-classification
+- chemical-compliance
+- ehs
+- regulatory-compliance
+- document-extraction
+- ocr
+- pdf-to-json
+- data-normalization
+- erp-integration
+- plm
+- supply-chain
+- chemicals
+apis:
+- name: SDS/MSDS Extraction REST API
+  description: REST API that extracts structured data from Safety Data Sheet PDFs, returning normalized
+    16-section records as JSON/XML/CSV. Includes synchronous single-document extraction, async bulk jobs
+    with webhook callbacks, and job polling. Bearer token authentication.
+  humanURL: https://safetydatasheetapi.com/api-docs/
+  baseURL: https://api.safetydatasheetapi.com/v1
+  tags:
   - sds
   - msds
   - safety-data-sheets
@@ -24,42 +47,54 @@ tags:
   - plm
   - supply-chain
   - chemicals
-apis:
-  - name: SDS/MSDS Extraction REST API
-    description: >-
-      REST API that extracts structured data from Safety Data Sheet PDFs, returning normalized 16-section records as
-      JSON/XML/CSV. Includes synchronous single-document extraction, async bulk jobs with webhook callbacks, and job
-      polling. Bearer token authentication.
-    humanURL: https://safetydatasheetapi.com/api-docs/
-    baseURL: https://api.safetydatasheetapi.com/v1
-    tags:
-      - sds
-      - msds
-      - safety-data-sheets
-      - ghs-classification
-      - chemical-compliance
-      - ehs
-      - regulatory-compliance
-      - document-extraction
-      - ocr
-      - pdf-to-json
-      - data-normalization
-      - erp-integration
-      - plm
-      - supply-chain
-      - chemicals
-    properties:
-      - type: OpenAPI
-        url: https://safetydatasheetapi.com/openapi.yaml
-      - type: Documentation
-        url: https://safetydatasheetapi.com/api-docs/
-      - type: LLMsTxt
-        url: https://safetydatasheetapi.com/llms.txt
+  properties:
+  - type: OpenAPI
+    url: https://safetydatasheetapi.com/openapi.yaml
+  - type: Documentation
+    url: https://safetydatasheetapi.com/api-docs/
+  - type: LLMsTxt
+    url: https://safetydatasheetapi.com/llms.txt
+  - type: MCPServer
+    url: mcp/safetydatasheetapi-mcp.yml
 maintainers:
-  - FN: SafetyDataSheetAPI (DscvryAI)
-    url: https://safetydatasheetapi.com/contact/
+- FN: SafetyDataSheetAPI (DscvryAI)
+  email: sales@safetydatasheetapi.com
+  url: https://safetydatasheetapi.com/contact/
 generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 95
   at: '2026-09-16T09:34:47.133Z'
+aid: safetydatasheetapi
+common:
+- type: DomainSecurity
+  url: security/safetydatasheetapi-domain-security.yml
+- type: Plans
+  url: plans/safetydatasheetapi-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/safetydatasheetapi-rate-limits.yml
+- type: Conventions
+  url: conventions/safetydatasheetapi-conventions.yml
+- type: Website
+  url: https://safetydatasheetapi.com
+x-enrichment:
+  date: '2026-09-16'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v3
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: >-
+    The published OpenAPI (/openapi.yaml), API docs, homepage, sitemap.xml and site-index.json all
+    return a Cloudflare "Just a moment" JS interstitial (HTTP 403) to both curl and WebFetch, so the
+    contract could not be fetched or derived; only the text/plain llms.txt and llms-full.txt pass the
+    edge, and the advertised API host api.safetydatasheetapi.com is additionally NXDOMAIN.
+  evidence:
+  - url: https://safetydatasheetapi.com/openapi.yaml
+    status: 403
+  - url: https://safetydatasheetapi.com/api-docs/
+    status: 403
+  - url: https://safetydatasheetapi.com/llms.txt
+    status: 200
+  checked: '2026-09-16'
