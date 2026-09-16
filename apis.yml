@@ -1,0 +1,65 @@
+name: Safety Data Sheet (SDS/MSDS) Extraction API
+description: >-
+  A REST API by SafetyDataSheetAPI (a product of DscvryAI) that converts Safety Data Sheet PDFs into normalized
+  16-section structured records (product identity, GHS/H&P statements, composition, exposure controls/PPE, tox/eco data,
+  disposal, transport, regulatory, revision metadata) output as JSON, XML, and CSV with confidence scores and warnings.
+  Supports OCR for scanned PDFs, multilingual input, custom schema mapping, and bulk/webhook async flows.
+url: https://raw.githubusercontent.com/api-evangelist/safety-data-sheet-sds-msds-extraction-api/refs/heads/main/apis.yml
+created: '2026-09-16'
+modified: '2026-09-16'
+specificationVersion: '0.21'
+tags:
+  - sds
+  - msds
+  - safety-data-sheets
+  - ghs-classification
+  - chemical-compliance
+  - ehs
+  - regulatory-compliance
+  - document-extraction
+  - ocr
+  - pdf-to-json
+  - data-normalization
+  - erp-integration
+  - plm
+  - supply-chain
+  - chemicals
+apis:
+  - name: SDS/MSDS Extraction REST API
+    description: >-
+      REST API that extracts structured data from Safety Data Sheet PDFs, returning normalized 16-section records as
+      JSON/XML/CSV. Includes synchronous single-document extraction, async bulk jobs with webhook callbacks, and job
+      polling. Bearer token authentication.
+    humanURL: https://safetydatasheetapi.com/api-docs/
+    baseURL: https://api.safetydatasheetapi.com/v1
+    tags:
+      - sds
+      - msds
+      - safety-data-sheets
+      - ghs-classification
+      - chemical-compliance
+      - ehs
+      - regulatory-compliance
+      - document-extraction
+      - ocr
+      - pdf-to-json
+      - data-normalization
+      - erp-integration
+      - plm
+      - supply-chain
+      - chemicals
+    properties:
+      - type: OpenAPI
+        url: https://safetydatasheetapi.com/openapi.yaml
+      - type: Documentation
+        url: https://safetydatasheetapi.com/api-docs/
+      - type: LLMsTxt
+        url: https://safetydatasheetapi.com/llms.txt
+maintainers:
+  - FN: SafetyDataSheetAPI (DscvryAI)
+    url: https://safetydatasheetapi.com/contact/
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 95
+  at: '2026-09-16T09:34:47.133Z'
