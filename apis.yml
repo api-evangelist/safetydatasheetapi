@@ -9,6 +9,22 @@ created: '2026-09-16'
 modified: '2026-09-16'
 specificationVersion: '0.21'
 tags:
+- SDS
+- msds
+- Safety Data Sheets
+- ghs-classification
+- chemical-compliance
+- EHS
+- Regulatory Compliance
+- Document Extraction
+- OCR
+- pdf-to-json
+- data-normalization
+- ERP Integration
+- PLM
+- Supply Chain
+- Chemicals
+tags_raw:
 - sds
 - msds
 - safety-data-sheets
@@ -32,6 +48,22 @@ apis:
   humanURL: https://safetydatasheetapi.com/api-docs/
   baseURL: https://api.safetydatasheetapi.com/v1
   tags:
+  - SDS
+  - msds
+  - Safety Data Sheets
+  - ghs-classification
+  - chemical-compliance
+  - EHS
+  - Regulatory Compliance
+  - Document Extraction
+  - OCR
+  - pdf-to-json
+  - data-normalization
+  - ERP Integration
+  - PLM
+  - Supply Chain
+  - Chemicals
+  tags_raw:
   - sds
   - msds
   - safety-data-sheets
