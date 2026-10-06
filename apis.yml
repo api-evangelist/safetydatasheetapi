@@ -6,7 +6,7 @@ description: A REST API by SafetyDataSheetAPI (a product of DscvryAI) that conve
   custom schema mapping, and bulk/webhook async flows.
 url: https://raw.githubusercontent.com/api-evangelist/safety-data-sheet-sds-msds-extraction-api/refs/heads/main/apis.yml
 created: '2026-09-16'
-modified: '2026-09-16'
+modified: '2026-10-06'
 specificationVersion: '0.21'
 tags:
 - SDS
@@ -99,6 +99,8 @@ generated:
   at: '2026-09-16T09:34:47.133Z'
 aid: safetydatasheetapi
 common:
+- url: https://safetydatasheetapi.com/blog/
+  type: Blog
 - type: DomainSecurity
   url: security/safetydatasheetapi-domain-security.yml
 - type: Plans
